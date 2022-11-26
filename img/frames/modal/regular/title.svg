@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+    <g id="Card1" serif:id="Card">
+        <path d="M58.779,160.988C62.564,166.577 73.921,182.311 90.372,195.913C103.724,206.953 120.458,216.65 139.287,218.002C139.523,218.019 139.762,218 140,218C171.336,218 196.801,192.658 196.999,161.382C196.999,161.382 197,160.987 197,161C197,129.541 171.459,104 140,104C139.762,104 139.523,103.981 139.287,103.998C121.054,105.308 104.776,114.445 91.633,125.042C74.497,138.859 62.648,155.246 58.779,160.988ZM190.244,104C206.035,117.93 216,138.317 216,161.017L215.998,161.489C215.856,183.982 205.922,204.171 190.245,218L1388,218C1401.52,199 1406.29,180 1406.29,161C1406.29,142 1401.52,123 1388,104C1388.75,105.054 1386.71,104 1388,104L190.244,104Z" style="fill:rgb(239,56,39);"/>
+    </g>
+</svg>

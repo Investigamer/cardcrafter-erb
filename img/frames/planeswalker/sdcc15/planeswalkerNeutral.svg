@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="203" height="123" viewBox="0 0 203 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;">
+    <g transform="matrix(1,0,0,1,-640.744,-1001.17)">
+        <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+        <g id="Card1" serif:id="Card">
+            <g id="loyalty-icons" serif:id="loyalty icons" transform="matrix(0.253844,0,0,0.253844,582.614,890.711)">
+                <g transform="matrix(0.90625,0,0,0.90625,74.6625,40.3589)">
+                    <g transform="matrix(3.93943,0,0,3.93943,31.7064,-6376.77)">
+                        <path d="M230,1742C208.667,1767.75 209.105,1794.09 230,1821C177.495,1828.43 124.819,1828.61 70,1821C88.962,1794.95 89.795,1768.63 70,1742C123.962,1732.84 176.616,1733.23 230,1742Z" style="stroke:rgb(96,96,96);stroke-width:4.41px;"/>
+                    </g>
+                    <g transform="matrix(3.1023,0,0,3.1023,157.276,-4885.87)">
+                        <path d="M230,1742C217.465,1768.9 217.202,1795.15 230,1821C177.495,1828.43 124.819,1828.61 70,1821C81.182,1794.95 81.415,1768.63 70,1742C123.962,1732.84 176.616,1733.23 230,1742Z" style="stroke:rgb(96,96,96);stroke-width:5.6px;"/>
+                    </g>
+                </g>
+                <g>
+                    <circle cx="1006" cy="570" r="19.189" style="fill:rgb(96,96,96);"/>
+                    <g transform="matrix(1,0,0,1,0,102.297)">
+                        <circle cx="1006" cy="570" r="19.189" style="fill:rgb(96,96,96);"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

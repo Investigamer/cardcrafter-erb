@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect id="Card1" serif:id="Card" x="0" y="0" width="1500" height="2100"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <path id="Background" d="M1500,0L0,0L0,2100L1500,2100L1500,0ZM1440,406L60,406L60,1268L1440,1268L1440,406Z"/>
+        <clipPath id="_clip2">
+            <path id="Background1" serif:id="Background" d="M1500,0L0,0L0,2100L1500,2100L1500,0ZM1440,406L60,406L60,1268L1440,1268L1440,406Z"/>
+        </clipPath>
+        <g clip-path="url(#_clip2)">
+            <g transform="matrix(1.1,0,0,1.1,-75,-105)">
+                <rect x="0" y="0" width="1500" height="2100" style="fill:rgb(159,122,34);"/>
+            </g>
+        </g>
+        <g id="Bar" transform="matrix(0.963808,0,0,0.285714,24.7345,999.714)">
+            <rect x="117" y="1359" width="1271" height="14" style="fill:url(#_Radial3);"/>
+        </g>
+        <path d="M-1,179L179.958,-1.958L377,-1.958L-0.566,375.608L-1,179Z" style="fill:rgb(236,219,45);"/>
+        <g id="Border" transform="matrix(6.72646,0,0,1,-2764.57,0)">
+            <rect x="411" y="1948" width="223" height="152"/>
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="_Radial3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-635.5,2.62534e-13,-7.78263e-14,-2143.75,752.5,1366)"><stop offset="0" style="stop-color:white;stop-opacity:1"/><stop offset="0.6" style="stop-color:white;stop-opacity:0.82"/><stop offset="0.81" style="stop-color:white;stop-opacity:0.42"/><stop offset="1" style="stop-color:white;stop-opacity:0"/></radialGradient>
+    </defs>
+</svg>

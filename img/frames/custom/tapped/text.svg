@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="2100" height="1500" viewBox="0 0 2100 1500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Card" transform="matrix(1.4,0,0,0.714286,0,0)">
+        <rect x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+        <g id="Textbox" transform="matrix(0.714286,0,0,2.10562,421.429,-2440.58)">
+            <rect x="477.286" y="1314" width="911.714" height="687.494" style="fill:rgb(0,117,190);"/>
+        </g>
+    </g>
+</svg>

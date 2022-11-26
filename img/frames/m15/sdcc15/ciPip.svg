@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+    <g id="Card1" serif:id="Card">
+        <g id="CI-Pip" serif:id="CI Pip" transform="matrix(1.04348,0,0,1.04348,-6.52174,-51.913)">
+            <circle cx="150" cy="1240" r="23"/>
+            <path d="M150,1213.17C135.19,1213.17 123.167,1225.19 123.167,1240C123.167,1254.81 135.19,1266.83 150,1266.83C164.81,1266.83 176.833,1254.81 176.833,1240C176.833,1225.19 164.81,1213.17 150,1213.17ZM150,1217C162.694,1217 173,1227.31 173,1240C173,1252.69 162.694,1263 150,1263C137.306,1263 127,1252.69 127,1240C127,1227.31 137.306,1217 150,1217Z" style="fill:rgb(96,96,96);"/>
+        </g>
+    </g>
+</svg>

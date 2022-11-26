@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <path id="Textbox" d="M1341.36,1121.32L158.604,1121.32L158.516,1170.32L166.733,1183.56L166.229,1311.77L156.604,1315.63C156.604,1315.63 154.584,1514.88 371.181,1707.59C442.368,1770.92 510.978,1804.82 584.45,1825.27C595.624,1828.38 612.322,1810.12 612.322,1810.12C612.322,1810.12 649.388,1824.42 670.601,1827.42C693.435,1830.65 749.326,1829.49 749.326,1829.49L749.96,1829.53L750.633,1829.49C750.633,1829.49 806.524,1830.64 829.358,1827.42C850.571,1824.42 887.637,1810.12 887.637,1810.12C887.637,1810.12 904.335,1828.38 915.509,1825.27C988.981,1804.82 1057.59,1770.92 1128.78,1707.58C1345.38,1514.88 1343.36,1315.63 1343.36,1315.63L1333.73,1311.77L1333.23,1183.56L1341.44,1170.32L1341.36,1121.32Z" style="fill:url(#_Linear1);"/>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(4.34137e-14,709,-495.308,3.03289e-14,750,1121)"><stop offset="0" style="stop-color:black;stop-opacity:0"/><stop offset="0.18" style="stop-color:black;stop-opacity:0.16"/><stop offset="0.38" style="stop-color:black;stop-opacity:0.31"/><stop offset="1" style="stop-color:black;stop-opacity:0.38"/></linearGradient>
+    </defs>
+</svg>

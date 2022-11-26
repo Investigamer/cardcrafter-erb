@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.992063,0,0,0.992063,1176.79,13.8571)">
+        <g id="Lower-Right" serif:id="Lower Right">
+            <circle id="Shield" cx="163" cy="1935" r="63" style="fill:rgb(164,166,170);"/>
+            <clipPath id="_clip1">
+                <circle id="Shield1" serif:id="Shield" cx="163" cy="1935" r="63"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(1.008,0,0,1.008,-1186.21,-13.968)">
+                    <path d="M1338.14,1982.82C1307.71,1967.59 1294.93,1940.92 1298,1904C1311.89,1904.44 1325.34,1900.33 1338.5,1893L1338.81,1893.17C1351.87,1900.4 1365.22,1904.44 1379,1904C1382.08,1941.07 1369.19,1967.8 1338.5,1983L1338.14,1982.82ZM1309,1925C1330.03,1933.79 1354.78,1950.88 1356,1958C1357,1963.84 1338.5,1974 1338.5,1974C1319.22,1959.75 1308.85,1943.53 1309,1925ZM1365,1944C1369.91,1936.24 1371.53,1924.82 1371,1911C1360.2,1910.6 1349.1,1901.8 1338.5,1902C1331.2,1902.14 1320.4,1906.43 1319,1911C1316.27,1919.89 1339.01,1936.82 1365,1944Z"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

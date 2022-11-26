@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Foil" transform="matrix(1,0,0,1,5,10)">
+        <path id="Foil-Star" serif:id="Foil Star" d="M129,1851.16L282.337,1858.03L215.967,1938.13L291.491,1869.47L298.357,1983.9L305.223,1869.47L378.459,1933.55L316.666,1858.03L497.466,1851.16L342.357,1844.75C342.357,1844.75 466.235,1798.37 575.427,1798.37C689.257,1798.37 844.443,1848.23 844.443,1848.23C844.443,1848.23 704.84,1782.14 575.427,1782.14C413.851,1782.14 332.686,1828.27 332.686,1828.27L387.613,1761.9L307.512,1830.56L298.357,1723L289.203,1830.56L193.081,1748.17L280.048,1844.29L129,1851.16Z" style="fill:white;"/>
+    </g>
+</svg>

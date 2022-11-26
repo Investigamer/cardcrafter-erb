@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1632" height="2220" viewBox="0 0 1632 2220" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Pinline" transform="matrix(1,0,0,1,66,60)">
+        <path d="M1228.69,1931L269.308,1931C173.536,1927.96 109.691,1906.42 62.976,1869.78C15.967,1832.9 -13.584,1781.15 -41.748,1719.71C-81.324,1633.37 -117.675,1528.42 -188.803,1416.35C-193.093,1409.59 -201.334,1406.48 -209.022,1408.71C-216.711,1410.95 -222,1417.99 -222,1426L-222,2321C-222,2330.94 -213.941,2339 -204,2339L1702,2339C1711.94,2339 1720,2330.94 1720,2321L1720,1426C1720,1417.99 1714.71,1410.95 1707.02,1408.71C1699.33,1406.48 1691.09,1409.59 1686.8,1416.35C1615.67,1528.42 1579.32,1633.37 1539.75,1719.71C1511.58,1781.15 1482.03,1832.9 1435.02,1869.78C1388.31,1906.42 1324.46,1927.96 1228.69,1931Z" style="fill:rgb(239,56,39);"/>
+    </g>
+</svg>

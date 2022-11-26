@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+    <g id="Card1" serif:id="Card">
+        <g id="Twins">
+            <path id="Title" d="M185.452,77L1368,77C1390.64,77.337 1413.27,104.037 1413,134.571L1413,176.307C1412.96,183.999 1405.15,191.996 1397,192L185.451,192C202.116,178.628 212.853,158.063 212.999,134.973L213,134.5C213,111.22 202.233,90.468 185.452,77Z" style="fill:rgb(0,123,67);"/>
+            <g id="Icon" transform="matrix(1,0,0,1.0082,0,-27.8196)">
+                <path d="M54.101,160.835C56.185,157.467 91.329,103.433 139,100.008C139.332,99.984 139.666,100 140,100C173.667,100 201,127.333 201,161L200.999,161.394C200.787,194.88 173.536,222 140,222C139.666,222 139.332,222.016 139,221.992C89.794,218.457 54,161 54,161L54.101,160.835Z" style="fill:rgb(0,123,67);"/>
+            </g>
+        </g>
+    </g>
+</svg>

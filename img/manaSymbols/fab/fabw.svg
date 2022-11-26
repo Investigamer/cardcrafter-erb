@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="135" height="135" viewBox="0 0 135 135" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-515,-982)">
+        <g transform="matrix(1,0,0,1,1177,-1730.64)">
+            <g id="Spear" transform="matrix(0.992063,0,0,0.992063,-756.206,860.5)">
+                <circle cx="163" cy="1935" r="63" style="fill:rgb(248,235,78);"/>
+                <clipPath id="_clip1">
+                    <circle cx="163" cy="1935" r="63"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(0.850999,-0.540246,0.540246,0.850999,-1026.27,383.643)">
+                        <path d="M163,2015L163,1978L143,1946.63L169,1887L195,1946.63L175,1978L175,2015L163,2015ZM171,1907L171,1951L185,1948L171,1907Z"/>
+                    </g>
+                </g>
+                <path d="M163,1866.96C125.448,1866.96 94.96,1897.45 94.96,1935C94.96,1972.55 125.448,2003.04 163,2003.04C200.552,2003.04 231.04,1972.55 231.04,1935C231.04,1897.45 200.552,1866.96 163,1866.96ZM163,1872C197.771,1872 226,1900.23 226,1935C226,1969.77 197.771,1998 163,1998C128.229,1998 100,1969.77 100,1935C100,1900.23 128.229,1872 163,1872Z"/>
+            </g>
+        </g>
+    </g>
+</svg>

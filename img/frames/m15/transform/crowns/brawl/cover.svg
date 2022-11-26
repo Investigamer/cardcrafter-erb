@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+    <g id="Card1" serif:id="Card">
+        <path id="Brawl-cover" serif:id="Brawl cover" d="M1441,59L59,59L59,241L1441,241L1441,59ZM165.755,104L1388,104C1401.52,123 1406.29,142 1406.29,161C1406.29,180 1401.52,199 1388,218L165.755,218C158.997,220.584 151.663,222 144,222C110.333,222 83,194.667 83,161C83,127.333 110.333,100 144,100C151.663,100 158.997,101.416 165.755,104Z"/>
+    </g>
+</svg>
