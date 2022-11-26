@@ -1969,22 +1969,7 @@ function saveCard(saveFromFile) {
 		cardKey = getCardName();
 	}
 	if (!saveFromFile) {
-		prompt({
-			title: 'Save Card',
-			label: 'Enter the name you would like to save your card under:',
-			value: 'Card Name',
-			inputAttrs: {
-				type: 'text'
-			},
-			type: 'input'
-		}).then((r) => {
-			if(r === null) {
-				return null;
-			} else {
-				return r;
-			}
-		}).catch(console.error);
-		cardKey = prompt('Enter the name you would like to save your card under:', cardKey);
+		cardKey = window.electron.promptUser('Save Card', 'Enter the name you would like to save your card under:', cardKey);
 		if (!cardKey) {return null;}
 	}
 	cardKey = cardKey.trim();

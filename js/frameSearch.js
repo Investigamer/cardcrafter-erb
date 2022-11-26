@@ -187,7 +187,7 @@ const frameNames = new Map ([
 ]);
 
 frameSearch = (str) => {
-	if (frameNames.has(str)) loadScript("/js/frames/pack" + frameNames.get(str) + ".js");
+	if (frameNames.has(str)) loadScript("js/frames/pack" + frameNames.get(str) + ".js");
 }
 
 //Thank you to w3schools for providing the following quick-and-easy autocomplete code :)
