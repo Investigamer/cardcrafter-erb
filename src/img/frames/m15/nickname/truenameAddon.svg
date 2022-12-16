@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+    <g id="Card1" serif:id="Card">
+        <path id="Godzilla-Title" serif:id="Godzilla Title" d="M125,237L125,218L1375,218L1375,237L1374.28,237C1333.2,237.384 1306.33,274.999 1302.22,301.956C1301.92,303.909 1300.24,305.353 1298.26,305.353L201.736,305.353C199.759,305.353 198.079,303.909 197.781,301.956C193.67,274.996 166.795,237.375 125.7,237L125,237Z" style="fill:rgb(239,56,39);"/>
+    </g>
+</svg>

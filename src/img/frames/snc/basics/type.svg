@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Masks">
+        <path id="Type" d="M631.089,1716C651.889,1671.14 697.336,1640 750,1640C802.664,1640 848.111,1671.14 868.911,1716L1388,1716L1388.32,1716.44C1401.6,1735.3 1406.29,1754.15 1406.29,1773C1406.29,1792 1401.52,1811 1388,1830L866.973,1830C845.372,1872.7 801.081,1902 750,1902C698.919,1902 654.628,1872.7 633.027,1830L112,1830C98.476,1811 93.714,1792 93.714,1773C93.714,1754 98.476,1735 112,1716L631.089,1716Z" style="fill:rgb(239,56,39);"/>
+    </g>
+</svg>

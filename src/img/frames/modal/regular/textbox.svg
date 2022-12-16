@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+    <g id="Card1" serif:id="Card">
+        <path id="FRONT" d="M111,1866L111,1314L1389,1314L1389,1937L667.079,1937C675.922,1926.88 686.744,1919.52 699.411,1914.74C700.969,1914.15 702,1912.66 702,1911C702,1909.34 700.969,1907.85 699.411,1907.26C680.545,1900.14 665.77,1887.31 655.529,1868.12C654.834,1866.81 653.477,1866 652,1866L111,1866Z" style="fill:rgb(246,210,98);"/>
+    </g>
+</svg>

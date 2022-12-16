@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.992063,0,0,0.992063,-0.206349,12.8571)">
+        <g id="Lower-Left" serif:id="Lower Left">
+            <circle id="Spear" cx="163" cy="1935" r="63" style="fill:rgb(248,235,78);"/>
+            <clipPath id="_clip1">
+                <circle id="Spear1" serif:id="Spear" cx="163" cy="1935" r="63"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(0.850999,-0.540246,0.540246,0.850999,-1026.27,383.643)">
+                    <path d="M163,2015L163,1978L143,1946.63L169,1887L195,1946.63L175,1978L175,2015L163,2015ZM171,1907L171,1951L185,1948L171,1907Z"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

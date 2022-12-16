@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1632" height="2220" viewBox="0 0 1632 2220" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Card" transform="matrix(1.088,0,0,1.05714,0,0)">
+        <rect x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <rect x="0" y="0" width="1500" height="2100"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g id="Margins" transform="matrix(0.919118,0,0,0.945946,60.6618,56.7568)">
+                <path id="Background" d="M1566,1949.2L1566,-60L-66,-60L-66,1949.2L1,1949.2L1,1L1499,1L1499,1949.2L1566,1949.2Z" style="fill:none;"/>
+                <clipPath id="_clip2">
+                    <path id="Background1" serif:id="Background" d="M1566,1949.2L1566,-60L-66,-60L-66,1949.2L1,1949.2L1,1L1499,1L1499,1949.2L1566,1949.2Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip2)">
+                    <g transform="matrix(1.088,0,0,1.05714,-66,-60)">
+                        <rect x="0" y="0" width="1500" height="2100" style="fill:rgb(0,139,69);"/>
+                    </g>
+                </g>
+                <g transform="matrix(1,0,0,1,-66,-60)">
+                    <path d="M68,236L68,433.042L-0.566,501.608L-1,305L68,236ZM439.042,62L242,62L305,-1L502.042,-1L439.042,62Z" style="fill:rgb(236,219,45);"/>
+                </g>
+                <path id="Border" d="M1499,1948L1499,2099L1,2099L1,1948L-66,1948L-66,2160L1566,2160L1566,1948L1499,1948Z"/>
+            </g>
+        </g>
+    </g>
+</svg>

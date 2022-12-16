@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Masks">
+        <path id="Type-bar-sidelines" serif:id="Type bar sidelines" d="M53,1247C54.715,1234.51 52.283,1222.38 44,1211C66.479,1187.41 96.106,1159.66 129,1130C107.884,1176.34 97.311,1181.89 98.053,1224.33C99.007,1278.79 103.109,1284.84 139,1321L146,1321L138,1326C121.378,1321.82 89.2,1287.73 53,1247ZM1447,1247C1445.29,1234.51 1447.72,1222.38 1456,1211C1433.52,1187.41 1403.89,1159.66 1371,1130C1392.12,1176.34 1402.69,1181.89 1401.95,1224.33C1400.99,1278.79 1396.89,1284.84 1361,1321L1354,1321L1362,1326C1378.62,1321.82 1410.8,1287.73 1447,1247Z" style="fill:rgb(0,123,67);"/>
+    </g>
+</svg>

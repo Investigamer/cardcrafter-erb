@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1500" height="2100" viewBox="0 0 1500 2100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Card" x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect id="Card1" serif:id="Card" x="0" y="0" width="1500" height="2100"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <path id="Classic" d="M0,2100L0,0L1500,0L1500,2100L0,2100ZM1421.56,1826.2C1433.64,1805.36 1439.59,1781.66 1440,1765L1440,85C1437.14,71.038 1428.74,62.781 1415,60L85,60C71.263,62.781 62.855,71.038 60,85L60,1765C60.414,1781.66 66.359,1805.36 78.439,1826.2C78.192,1829.09 78.043,1832.02 78,1835C78.481,1868.05 91.996,1896.02 106,1907L189.087,1907C238.414,1925.01 299.902,1934.58 370,1933L1130,1933C1200.1,1934.58 1261.59,1925.01 1310.91,1907L1394,1907C1408,1896.02 1421.52,1868.05 1422,1835C1421.96,1832.02 1421.81,1829.09 1421.56,1826.2Z"/>
+    </g>
+</svg>

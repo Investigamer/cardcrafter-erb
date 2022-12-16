@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="2100" height="1500" viewBox="0 0 2100 1500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Card" transform="matrix(1.4,0,0,0.714286,0,0)">
+        <rect x="0" y="0" width="1500" height="2100" style="fill:none;"/>
+        <g id="Twins" transform="matrix(0.714286,0,0,1.4,0,0)">
+            <path d="M1978.32,1282.44C1991.6,1301.3 1996.29,1320.15 1996.29,1339C1996.29,1358 1991.52,1377 1978,1396L1068.29,1396C1054.76,1377 1050,1358 1050,1339C1050,1320 1054.76,1301 1068.29,1282L1978,1282L1978.32,1282.44Z" style="fill:rgb(0,123,67);"/>
+        </g>
+    </g>
+</svg>
