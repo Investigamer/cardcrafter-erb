@@ -1,8 +1,20 @@
-import React, { Dispatch, SetStateAction } from 'react';
-import { set } from 'husky';
-import { imageBlank } from '../js/constants';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import { CardDetails } from '../types/CardDetails';
-import { updateArt, uploadFile } from '../js/helpers';
+import {
+  artFromScryfall,
+  dropEnter,
+  dropLeave,
+  dropOver,
+  dropUpload,
+  fetchScryfallData,
+  removeArt,
+  resetArt,
+  updateArt,
+  updateArtPosition,
+  uploadFile,
+} from '../js/helpers';
+import { corsProxy } from '../js/constants';
+import { ScryfallCardData } from '../types/Scryfall';
 
 interface MenuArtDetails {
   Card: CardDetails;
@@ -11,6 +23,8 @@ interface MenuArtDetails {
 
 const MenuArt = (props: MenuArtDetails) => {
   const { Card, setCard } = props;
+  const [cardArts, setCardArts] = useState<ScryfallCardData[]>([]);
+  const [artChanged, setArtChanged] = useState<number>(Date.now());
   return (
     <div id="creator-menu-art" className="hidden">
       <div className="readable-background padding margin-bottom">
@@ -24,12 +38,15 @@ const MenuArt = (props: MenuArtDetails) => {
             </h5>
             <input
               type="file"
+              id="art-file"
               multiple={false}
               accept=".png, .svg, .jpg, .jpeg, .bmp"
               placeholder="File Upload"
               className="input"
-              /* data-dropFunction="uploadArt" */
-              /* data-otherParams="autoFit" */
+              onDragEnter={dropEnter}
+              onDragOver={dropOver}
+              onDragLeave={dropLeave}
+              onDrop={(e) => dropUpload(e, Card, setCard, updateArt)}
               onInput={(e) =>
                 uploadFile(e.currentTarget.files, Card, setCard, updateArt)
               }
@@ -38,11 +55,16 @@ const MenuArt = (props: MenuArtDetails) => {
           <div>
             <input
               type="url"
+              id="art-url"
               placeholder="Via URL"
               className="input"
-              onChange={(e) =>
-                imageURL(e.currentTarget.value, uploadArt, 'autoFit')
-              }
+              onChange={async (e) => {
+                /* Validate URL, add CORS Proxy */
+                const { value } = e.currentTarget;
+                if (['http', 'https'].some((v) => value.includes(v))) {
+                  await updateArt(`${corsProxy}${value}`, Card, setCard);
+                }
+              }}
             />
           </div>
         </div>
@@ -54,18 +76,35 @@ const MenuArt = (props: MenuArtDetails) => {
           type="text"
           placeholder="Enter Card Name"
           className="input margin-bottom"
-          onChange={(e) =>
-            fetchScryfallData(e.currentTarget.value, artFromScryfall, true)
-          }
+          onChange={async (e) => {
+            await fetchScryfallData(
+              e.currentTarget.value,
+              true,
+              artFromScryfall,
+              setCardArts,
+              artChanged,
+              setArtChanged
+            );
+          }}
         />
         <h5 className="padding margin-bottom input-description">
           Select a specific card art to load
         </h5>
-        <select
-          className="input margin-bottom"
-          id="art-index"
-          onChange={() => changeArtIndex()}
-        />
+        <select className="input margin-bottom" id="art-index">
+          {cardArts.map((art, index) => (
+            <option
+              key={index}
+              onSelect={async () => {
+                // Validate URL, add CORS Proxy
+                if (['http', 'https'].some((v) => art.source!.includes(v))) {
+                  await updateArt(`${corsProxy}${art.source}`, Card, setCard);
+                }
+              }}
+            >
+              {`${art.name} (${art.set} - ${art.artist})`}
+            </option>
+          ))}
+        </select>
         <h5 className="margin-bottom padding input-description">
           And credit the artist
         </h5>
@@ -92,34 +131,21 @@ const MenuArt = (props: MenuArtDetails) => {
             type="number"
             className="input"
             defaultValue={0}
-            onChange={(e) => {
-              const value = parseInt(e.currentTarget.value, 10) || 0;
-              Card.artX = value / Card.width;
-              setCard({ ...Card });
-            }}
+            onChange={() => updateArtPosition(Card, setCard)}
           />
           <input
             id="art-y"
             type="number"
             className="input"
             defaultValue={0}
-            onChange={(e) => {
-              const value = parseInt(e.currentTarget.value, 10) || 0;
-              Card.artY = value / Card.height;
-              setCard({ ...Card });
-            }}
+            onChange={() => updateArtPosition(Card, setCard)}
           />
           <input
             id="art-zoom"
             type="number"
             className="input"
-            defaultValue={100}
-            onChange={(e) => {
-              const value = parseFloat(e.currentTarget.value) || 0;
-              Card.artZoom = value / 100;
-              setCard({ ...Card });
-            }}
-            step={0.1}
+            defaultValue={1}
+            onChange={() => updateArtPosition(Card, setCard)}
             min={0}
           />
           <input
@@ -127,23 +153,23 @@ const MenuArt = (props: MenuArtDetails) => {
             type="number"
             className="input"
             defaultValue={0}
-            onChange={(e) => {
-              Card.artRotate = parseInt(e.currentTarget.value, 10) || 0;
-              setCard({ ...Card });
-            }}
-            step={1}
+            onChange={() => updateArtPosition(Card, setCard)}
             min={0}
             max={360}
           />
         </div>
         <div className="input-grid">
-          <button className="input" type="button" onClick={() => autoFitArt()}>
+          <button
+            className="input"
+            type="button"
+            onClick={() => resetArt(Card, setCard)}
+          >
             Auto Fit Art
           </button>
           <button
             className="input"
             type="button"
-            onClick={() => uploadArt(imageBlank.src)}
+            onClick={() => removeArt(Card, setCard)}
           >
             Remove Art
           </button>

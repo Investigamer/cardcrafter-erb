@@ -16,7 +16,7 @@ import MediumX4 from '@upscalerjs/esrgan-medium/4x';
  */
 
 export async function upscaleSlim(source: string, scale: number) {
-  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const models: { [key: number]: any } = {
     2: SlimX2,
     4: SlimX4,
@@ -38,7 +38,7 @@ export async function upscaleSlim(source: string, scale: number) {
 }
 
 export async function upscaleMedium(source: string, scale: number) {
-  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const models: { [key: number]: any } = {
     2: MediumX2,
     4: MediumX4,

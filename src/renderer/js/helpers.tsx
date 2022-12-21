@@ -4,6 +4,8 @@ import { TemplatePack } from '../types/TemplatePack';
 import { imageBlank } from './constants';
 import { setSymbolAliases } from '../data/SetSymbols';
 import { upscaleSlim } from './upscale';
+import { ScryfallCardData } from '../types/Scryfall';
+import skip = util.skip;
 
 /*
 UTILITY FUNCTIONS
@@ -17,6 +19,11 @@ export function deepcopy(obj: unknown) {
 // Get an Input Element
 export function getInput(element: string) {
   return document.querySelector(element) as HTMLInputElement;
+}
+
+// Get a Select Input Element
+export function getInputSelect(element: string) {
+  return document.querySelector(element) as HTMLSelectElement;
 }
 
 // Card Data operations
@@ -537,9 +544,21 @@ export async function getSetSymbol(
  * ART FUNCTIONALITY
  * */
 
+export function updateArtPosition(
+  Card: CardDetails,
+  setCard: Dispatch<SetStateAction<CardDetails>> | null = null
+) {
+  Card.artX = getInput('#art-x').valueAsNumber || 0;
+  Card.artY = getInput('#art-y').valueAsNumber || 0;
+  Card.artZoom = getInput('#art-zoom').valueAsNumber || 0;
+  Card.artRotate = getInput('#art-rotate').valueAsNumber || 0;
+  if (setCard) setCard({ ...Card });
+}
+
 export function resetArt(
   Card: CardDetails,
-  setCard: Dispatch<SetStateAction<CardDetails>>
+  setCard: Dispatch<SetStateAction<CardDetails>>,
+  reset = true
 ) {
   getInput('#art-rotate').value = '0';
   if (
@@ -548,42 +567,54 @@ export function resetArt(
       scaleHeight(Card.artBounds.height, Card)
   ) {
     getInput('#art-zoom').value = (
-      (scaleHeight(Card.artBounds.height, Card) / Card.art.height) *
-      100
-    ).toFixed(1);
-    getInput('#art-y').value = Math.round(
-      scaleY(Card.artBounds.y, Card) - scaleHeight(Card.marginY, Card)
+      scaleHeight(Card.artBounds.height, Card) / Card.art.height
+    ).toFixed(4);
+    Card.artOffsetX =
+      (Card.art.width * getInput('#art-zoom').valueAsNumber) / 2;
+    Card.artOffsetY =
+      (Card.art.width * getInput('#art-zoom').valueAsNumber) / 2;
+    getInput('#art-y').value = (
+      Math.round(
+        scaleY(Card.artBounds.y, Card) - scaleHeight(Card.marginY, Card)
+      ) + Card.artOffsetY
     ).toString();
-    getInput('#art-x').value = Math.round(
-      scaleX(Card.artBounds.x, Card) -
-        ((parseFloat(getInput('#art-zoom').value) / 100) * Card.art.width -
-          scaleWidth(Card.artBounds.width, Card)) /
-          2 -
-        scaleWidth(Card.marginX, Card)
+    getInput('#art-x').value = (
+      Math.round(
+        scaleX(Card.artBounds.x, Card) -
+          (getInput('#art-zoom').valueAsNumber * Card.art.width -
+            scaleWidth(Card.artBounds.width, Card)) /
+            2 -
+          scaleWidth(Card.marginX, Card)
+      ) + Card.artOffsetX
     ).toString();
   } else {
     getInput('#art-zoom').value = (
-      (scaleWidth(Card.artBounds.width, Card) / Card.art.width) *
-      100
-    ).toFixed(1);
-    getInput('#art-x').value = Math.round(
-      scaleX(Card.artBounds.x, Card) - scaleWidth(Card.marginX, Card)
+      scaleWidth(Card.artBounds.width, Card) / Card.art.width
+    ).toFixed(4);
+    Card.artOffsetX =
+      (Card.art.width * getInput('#art-zoom').valueAsNumber) / 2;
+    Card.artOffsetY =
+      (Card.art.width * getInput('#art-zoom').valueAsNumber) / 2;
+    getInput('#art-x').value = (
+      Math.round(
+        scaleX(Card.artBounds.x, Card) - scaleWidth(Card.marginX, Card)
+      ) + Card.artOffsetX
     ).toString();
-    getInput('#art-y').value = Math.round(
-      scaleY(Card.artBounds.y, Card) -
-        ((parseFloat(getInput('#art-zoom').value) / 100) * Card.art.height -
-          scaleHeight(Card.artBounds.height, Card)) /
-          2 -
-        scaleHeight(Card.marginY, Card)
+    getInput('#art-y').value = (
+      Math.round(
+        scaleY(Card.artBounds.y, Card) -
+          (getInput('#art-zoom').valueAsNumber * Card.art.height -
+            scaleHeight(Card.artBounds.height, Card)) /
+            2 -
+          scaleHeight(Card.marginY, Card)
+      ) /
+        Card.height +
+      Card.artOffsetY
     ).toString();
   }
 
   // Update Card object
-  Card.artX = parseInt(getInput('#art-x').value, 10) / Card.width;
-  Card.artY = parseInt(getInput('#art-y').value, 10) / Card.height;
-  Card.artZoom = parseFloat(getInput('#art-zoom').value) / 100;
-  Card.artRotate = parseInt(getInput('#art-rotate').value, 10);
-  setCard({ ...Card });
+  if (reset) updateArtPosition(Card, setCard);
 }
 
 export async function updateArt(
@@ -616,4 +647,163 @@ export async function updateArt(
     }
   };
   art.src = source;
+}
+
+export function removeArt(
+  Card: CardDetails,
+  setCard: Dispatch<SetStateAction<CardDetails>>
+) {
+  getInput('#art-url').value = '';
+  getInput('#art-file').value = '';
+  Card.art = imageBlank;
+  setCard({ ...Card });
+}
+
+/*
+ * SCRYFALL FUNCTIONALITY
+ */
+
+export async function fetchScryfallData(
+  cardName: string,
+  searchUniqueArt = false,
+  callback: (
+    data: ScryfallCardData[],
+    setter: Dispatch<SetStateAction<ScryfallCardData[]>>,
+    tracker: number,
+    trackerSetter: Dispatch<SetStateAction<number>>
+  ) => void,
+  setter: Dispatch<SetStateAction<ScryfallCardData[]>>,
+  tracker: number,
+  trackerSetter: Dispatch<SetStateAction<number>>
+) {
+  const cardLanguageSelect = getInputSelect('#import-language');
+  const responseCards: ScryfallCardData[] = [];
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = async () => {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      const importedCards = JSON.parse(xhttp.responseText).data;
+      importedCards.forEach((card: ScryfallCardData) => {
+        if ('card_faces' in card) {
+          card.card_faces!.forEach((face) => {
+            face.set = card.set;
+            face.rarity = card.rarity;
+            if (card.lang !== 'en') {
+              face.oracle_text = face.printed_text!;
+              face.name = face.printed_name!;
+              face.type_line = face.printed_type_line!;
+            }
+            responseCards.push(face);
+          });
+        } else {
+          if (card.lang !== 'en') {
+            card.oracle_text = card.printed_text!;
+            card.name = card.printed_name!;
+            card.type_line = card.printed_type_line!;
+          }
+          responseCards.push(card);
+        }
+      });
+      await callback(responseCards, setter, tracker, trackerSetter);
+    } else if (
+      xhttp.readyState === 4 &&
+      xhttp.status === 404 &&
+      !searchUniqueArt &&
+      cardName !== ''
+    ) {
+      notify(
+        `No cards found for "${cardName}" in ${
+          cardLanguageSelect.options[cardLanguageSelect.selectedIndex].text
+        }.`,
+        5
+      );
+    }
+  };
+  xhttp.onerror = () => {
+    notify(
+      `No cards found for "${cardName}" in ${
+        cardLanguageSelect.options[cardLanguageSelect.selectedIndex].text
+      }.`,
+      5
+    );
+  };
+  const cardLanguage = `lang%3D${cardLanguageSelect.value}`;
+  let uniqueArt = '';
+  if (searchUniqueArt) {
+    uniqueArt = '&unique=art';
+  }
+  xhttp.open(
+    'GET',
+    `https://api.scryfall.com/cards/search?order=released&include_extras=true${uniqueArt}&q=name%3D${cardName.replace(
+      / /g,
+      '_'
+    )}%20${cardLanguage}`,
+    true
+  );
+  try {
+    xhttp.send();
+  } catch {
+    // eslint-disable-next-line no-console
+    console.log('Scryfall API search failed.');
+  }
+}
+
+export async function artFromScryfall(
+  data: ScryfallCardData[],
+  setter: Dispatch<SetStateAction<ScryfallCardData[]>>,
+  tracker: number,
+  trackerSetter: Dispatch<SetStateAction<number>>
+) {
+  const scryfallArt: ScryfallCardData[] = [];
+  data.forEach((card) => {
+    if (
+      'image_uris' in card &&
+      'art_crop' in card.image_uris! &&
+      (card.object === 'card' || card.type_line !== 'Card') &&
+      card.artist
+    ) {
+      card.source = card.image_uris.art_crop;
+      scryfallArt.push(card);
+    }
+  });
+  const now = Date.now();
+  if (tracker < now) {
+    trackerSetter(now);
+    setter(scryfallArt);
+  }
+}
+
+/*
+ * DRAG AND DROP
+ */
+
+export function dropEnter(e: React.DragEvent<HTMLInputElement>) {
+  e.preventDefault();
+  e.stopPropagation();
+  e.currentTarget.closest('.drop-area')!.classList.add('hover');
+}
+export function dropLeave(e: React.DragEvent<HTMLInputElement>) {
+  e.preventDefault();
+  e.stopPropagation();
+  e.currentTarget.closest('.drop-area')!.classList.remove('hover');
+}
+export function dropOver(e: React.DragEvent<HTMLInputElement>) {
+  e.preventDefault();
+  e.stopPropagation();
+  e.currentTarget.closest('.drop-area')!.classList.add('hover');
+}
+export function dropUpload(
+  e: React.DragEvent<HTMLInputElement>,
+  Card: CardDetails,
+  setCard: Dispatch<SetStateAction<CardDetails>>,
+  callback: (
+    source: string,
+    card: CardDetails,
+    setter: React.Dispatch<React.SetStateAction<CardDetails>>
+  ) => void
+) {
+  e.preventDefault();
+  e.stopPropagation();
+  e.currentTarget.files = e.dataTransfer.files;
+  e.currentTarget.closest('.drop-area')!.classList.remove('hover');
+  uploadFile(e.dataTransfer.files, Card, setCard, callback);
 }
