@@ -1,5 +1,5 @@
 import { Group, Image, Layer, Stage } from 'react-konva';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { CardDetails } from '../types/CardDetails';
 import ArtImage from './canvas/ArtImage';
 import FrameImage from './canvas/FrameImage';
@@ -7,8 +7,13 @@ import WatermarkImage from './canvas/WatermarkImage';
 import { scaleX, scaleY, getInput } from '../js/helpers';
 import { imageBlank } from '../js/constants';
 
-const CardCanvas = (props: { Card: CardDetails }) => {
-  const { Card } = props;
+interface CardCanvasDetails {
+  Card: CardDetails;
+  setCard: Dispatch<SetStateAction<CardDetails>>
+}
+
+const CardCanvas = (props: CardCanvasDetails) => {
+  const { Card, setCard } = props;
   const [uniqueKeyArt, setUniqueKeyArt] = useState(Math.random());
   const [uniqueKeyFrames, setUniqueKeyFrames] = useState(Math.random());
   const [uniqueKeyWatermark, setUniqueKeyWatermark] = useState(Math.random());
@@ -35,9 +40,11 @@ const CardCanvas = (props: { Card: CardDetails }) => {
     >
       <Layer>
         <Group key={uniqueKeyArt}>
-          {Card.art !== imageBlank && <ArtImage Card={Card} />}
+          {Card.art !== imageBlank && (
+            <ArtImage Card={Card} setCard={setCard} />
+          )}
         </Group>
-        <Group key={uniqueKeyFrames}>
+        <Group key={uniqueKeyFrames} listening={false}>
           {Card.frames.map((frame, index) => (
             <FrameImage key={index} frame={frame} Card={Card} />
           ))}

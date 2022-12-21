@@ -23,6 +23,8 @@ export interface CardDetails {
   artZoom: number;
   artRotate: number;
   artBounds: TemplateFrameBounds;
+  artOffsetX: number;
+  artOffsetY: number;
   artUpscale: null | string;
   artUpscaleFactor: null | number;
 

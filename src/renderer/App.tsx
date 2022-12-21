@@ -72,7 +72,7 @@ const Creator = () => {
         filter: 'none',
       }}
     >
-      <CardCanvas Card={Card} />
+      <CardCanvas Card={Card} setCard={setCard} />
       <div className="creator-menu box-shadow">
         <MenuTabs />
         <div id="creator-menu-sections" className="margin-bottom">

@@ -89,6 +89,8 @@ export const card: CardDetails = {
   artZoom: 1,
   artRotate: 0,
   artBounds: { x: 0.0767, y: 0.1129, width: 0.8476, height: 0.4429 },
+  artOffsetX: 0,
+  artOffsetY: 0,
   artUpscale: null,
   artUpscaleFactor: null,
 
