@@ -16,6 +16,7 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 'off',
     'no-param-reassign': 'off',
     'react/no-array-index-key': 'off',
+    'react-hooks/exhaustive-deps': 'off',
   },
   parserOptions: {
     ecmaVersion: 2020,
