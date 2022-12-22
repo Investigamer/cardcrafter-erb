@@ -6,6 +6,10 @@ import {
   removeSetSymbol,
   updateSetSymbol,
   uploadFile,
+  dropEnter,
+  dropOver,
+  dropLeave,
+  dropUpload,
 } from '../js/helpers';
 import { CardDetails } from '../types/CardDetails';
 import { corsProxy } from '../js/constants';
@@ -34,8 +38,10 @@ const MenuSetSymbol = (props: MenuSetSymbolDetails) => {
               accept=".png, .svg, .jpg, .jpeg, .bmp"
               placeholder="File Upload"
               className="input"
-              /* data-dropFunction="uploadSetSymbol" */
-              /* data-otherParams="resetSetSymbol" */
+              onDragEnter={dropEnter}
+              onDragOver={dropOver}
+              onDragLeave={dropLeave}
+              onDrop={(e) => dropUpload(e, Card, setCard, updateSetSymbol)}
               onInput={(e) =>
                 uploadFile(
                   e.currentTarget.files,

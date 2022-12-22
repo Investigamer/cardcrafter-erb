@@ -6,7 +6,7 @@ import {
   toggleCollapse,
   resetWatermark,
   updateWatermark,
-  uploadFile,
+  uploadFile, dropEnter, dropOver, dropLeave, dropUpload, updateSetSymbol
 } from '../js/helpers';
 
 // Types
@@ -42,7 +42,16 @@ const MenuWatermark = (props: MenuWatermarkDetails) => {
               accept=".png, .svg, .jpg, .jpeg, .bmp"
               placeholder="File Upload"
               className="input"
-              /* Add drag and drop file input */
+              onDragEnter={dropEnter}
+              onDragOver={dropOver}
+              onDragLeave={dropLeave}
+              onDrop={(e) => {
+                if (e.dataTransfer.files[0].name.includes('.svg')) {
+                  dropUpload(e, Card, setCard, getWatermark);
+                } else {
+                  dropUpload(e, Card, setCard, updateWatermark);
+                }
+              }}
               onInput={(e) => {
                 uploadFile(e.currentTarget.files, Card, setCard, getWatermark);
               }}
