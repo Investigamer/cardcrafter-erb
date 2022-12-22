@@ -5,7 +5,6 @@ import { imageBlank } from './constants';
 import { setSymbolAliases } from '../data/SetSymbols';
 import { upscaleSlim } from './upscale';
 import { ScryfallCardData } from '../types/Scryfall';
-import skip = util.skip;
 
 /*
 UTILITY FUNCTIONS
@@ -82,7 +81,7 @@ export function uploadFile(
     setCard: Dispatch<SetStateAction<CardDetails>>
   ) => void
 ) {
-  if (!file) return;
+  if (!file || file.length < 1) return;
   let result: string | ArrayBuffer | null = imageBlank.src;
   const reader = new FileReader();
   reader.onloadend = () => {
@@ -566,6 +565,7 @@ export function resetArt(
     scaleWidth(Card.artBounds.width, Card) /
       scaleHeight(Card.artBounds.height, Card)
   ) {
+    // Zoom scale based on height (tall art)
     getInput('#art-zoom').value = (
       scaleHeight(Card.artBounds.height, Card) / Card.art.height
     ).toFixed(4);
@@ -588,6 +588,7 @@ export function resetArt(
       ) + Card.artOffsetX
     ).toString();
   } else {
+    // Zoom scale based on width (wide art)
     getInput('#art-zoom').value = (
       scaleWidth(Card.artBounds.width, Card) / Card.art.width
     ).toFixed(4);
@@ -607,9 +608,7 @@ export function resetArt(
             scaleHeight(Card.artBounds.height, Card)) /
             2 -
           scaleHeight(Card.marginY, Card)
-      ) /
-        Card.height +
-      Card.artOffsetY
+      ) + Card.artOffsetY
     ).toString();
   }
 
@@ -781,16 +780,19 @@ export function dropEnter(e: React.DragEvent<HTMLInputElement>) {
   e.stopPropagation();
   e.currentTarget.closest('.drop-area')!.classList.add('hover');
 }
+
 export function dropLeave(e: React.DragEvent<HTMLInputElement>) {
   e.preventDefault();
   e.stopPropagation();
   e.currentTarget.closest('.drop-area')!.classList.remove('hover');
 }
+
 export function dropOver(e: React.DragEvent<HTMLInputElement>) {
   e.preventDefault();
   e.stopPropagation();
   e.currentTarget.closest('.drop-area')!.classList.add('hover');
 }
+
 export function dropUpload(
   e: React.DragEvent<HTMLInputElement>,
   Card: CardDetails,
