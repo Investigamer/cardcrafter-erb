@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { CardDetails } from '../types/CardDetails';
 import {
   artFromScryfall,
@@ -25,6 +25,17 @@ const MenuArt = (props: MenuArtDetails) => {
   const { Card, setCard } = props;
   const [cardArts, setCardArts] = useState<ScryfallCardData[]>([]);
   const [artChanged, setArtChanged] = useState<number>(Date.now());
+
+  // Select first art in list when scryfall fetched
+  useEffect(() => {
+    if (0 in cardArts) {
+      updateArt(`${corsProxy}${cardArts[0].source}`, Card, setCard).catch(
+        // eslint-disable-next-line no-console
+        (reason) => console.error(reason)
+      );
+    }
+  }, [cardArts]);
+
   return (
     <div id="creator-menu-art" className="hidden">
       <div className="readable-background padding margin-bottom">
@@ -90,17 +101,17 @@ const MenuArt = (props: MenuArtDetails) => {
         <h5 className="padding margin-bottom input-description">
           Select a specific card art to load
         </h5>
-        <select className="input margin-bottom" id="art-index">
+        <select
+          className="input margin-bottom"
+          id="art-index"
+          onChange={async (e) => {
+            // Validate URL, add CORS Proxy
+            const art = cardArts[Number(e.currentTarget.value)];
+            await updateArt(`${corsProxy}${art.source}`, Card, setCard);
+          }}
+        >
           {cardArts.map((art, index) => (
-            <option
-              key={index}
-              onSelect={async () => {
-                // Validate URL, add CORS Proxy
-                if (['http', 'https'].some((v) => art.source!.includes(v))) {
-                  await updateArt(`${corsProxy}${art.source}`, Card, setCard);
-                }
-              }}
-            >
+            <option key={index} value={index}>
               {`${art.name} (${art.set} - ${art.artist})`}
             </option>
           ))}
